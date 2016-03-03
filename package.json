@@ -3,15 +3,11 @@
   "version": "0.0.0",
   "description": "A very simple DOM manipulation tool.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Ketih Showalter",
   "license": "BSD-2-Clause",
-  "keywords": ["mp3", "flv", "converter"],
+  "keywords": ["DOM"],
   "repository" : {
     "type": "git",
     "url": "git@github.com:kshowalter/SimpleDOM.git"
-  },
-  "engines": { "node": "*" }    }
+  }
 }
