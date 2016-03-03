@@ -11,7 +11,7 @@
   "keywords": ["mp3", "flv", "converter"],
   "repository" : {
     "type": "git",
-    "url": "https://hacksparrow@github.com/hacksparrow/flv2mp3.git"
+    "url": "git@github.com:kshowalter/SimpleDOM.git"
   },
   "engines": { "node": "*" }    }
 }
