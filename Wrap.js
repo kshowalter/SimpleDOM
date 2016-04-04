@@ -4,11 +4,19 @@ var wrapper_prototype = {
     return this;
   },
   append: function(sub_element){
-    this.elem.appendChild(sub_element.elem);
+    if( sub_element instanceof Node ){
+      this.elem.appendChild(sub_element);
+    } else {
+      this.elem.appendChild(sub_element.elem);
+    }
     return this;
   },
   appendTo: function(parent_element){
-    parent_element.append(this);
+    if( parent_element instanceof Node ){
+      parent_element.appendChild(this.elem);
+    } else {
+      parent_element.append(this);
+    }
     return this;
   },
   attr: function(name, value ){
@@ -23,6 +31,13 @@ var wrapper_prototype = {
   },
   unwrap: function(){
     return this.elem;
+  },
+  clear: function(){
+    //this.elem.innerHTML = '';
+    while (this.elem.firstChild) {
+      this.elem.removeChild(this.elem.firstChild);
+    }
+    return this;
   }
 };
 
@@ -31,6 +46,5 @@ var Wrap = function(element){
   W.elem = element;
   return W;
 };
-
 
 module.exports = Wrap;

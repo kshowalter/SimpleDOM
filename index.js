@@ -1,7 +1,8 @@
 //var Value = require('./k_DOM_extra.js').Value;
 //var Selector = require('./k_DOM_extra.js').Selector;
 
-var Wrap = require('./wrap.js');
+var Wrap = require('./Wrap.js');
+
 
 var $ = function(input){
   if( typeof input === 'undefined' ) {
