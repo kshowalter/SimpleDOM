@@ -1,6 +1,6 @@
 var wrapper_prototype = {
-  html: function(html){
-    this.elem.innerHTML = html;
+  text: function(string){
+    this.elem.textContent = string;
     return this;
   },
   append: function(sub_element){
