@@ -4,6 +4,10 @@ var wrapperPrototype = {
     return this;
   },
   append: function(subElement){
+    if( subElement instanceof String){
+      subElement = document.createTextNode(subElement);
+    }
+    
     if( subElement instanceof Node ){
       this.elem.appendChild(subElement);
     } else {
