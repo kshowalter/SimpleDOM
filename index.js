@@ -1,5 +1,5 @@
-//var Value = require('./k_DOM_extra.js').Value;
-//var Selector = require('./k_DOM_extra.js').Selector;
+//var Value = require('./kDOMExtra.js').Value;
+//var Selector = require('./kDOMExtra.js').Selector;
 
 var Wrap = require('./Wrap.js');
 

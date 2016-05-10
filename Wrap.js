@@ -1,21 +1,21 @@
-var wrapper_prototype = {
+var wrapperPrototype = {
   text: function(string){
     this.elem.textContent = string;
     return this;
   },
-  append: function(sub_element){
-    if( sub_element instanceof Node ){
-      this.elem.appendChild(sub_element);
+  append: function(subElement){
+    if( subElement instanceof Node ){
+      this.elem.appendChild(subElement);
     } else {
-      this.elem.appendChild(sub_element.elem);
+      this.elem.appendChild(subElement.elem);
     }
     return this;
   },
-  appendTo: function(parent_element){
-    if( parent_element instanceof Node ){
-      parent_element.appendChild(this.elem);
+  appendTo: function(parentElement){
+    if( parentElement instanceof Node ){
+      parentElement.appendChild(this.elem);
     } else {
-      parent_element.append(this);
+      parentElement.append(this);
     }
     return this;
   },
@@ -42,7 +42,7 @@ var wrapper_prototype = {
 };
 
 var Wrap = function(element){
-  var W = Object.create(wrapper_prototype);
+  var W = Object.create(wrapperPrototype);
   W.elem = element;
   return W;
 };
