@@ -1,5 +1,5 @@
 {
-  "name": "SimpleDOM",
+  "name": "simpledom",
   "version": "0.0.0",
   "description": "A very simple DOM manipulation tool.",
   "main": "index.js",
