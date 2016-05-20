@@ -1,9 +1,24 @@
+/**
+* A simple DOM manipulation tool.
+ * @fileOverview Constructor for SimpleDOM function.
+ * @author Keith Showalter {@link https://github.com/kshowalter}
+ * @version 0.1.0
+ */
+
 //var Value = require('./kDOMExtra.js').Value;
 //var Selector = require('./kDOMExtra.js').Selector;
 
+
+/**
+ * @module
+ */
 var Wrap = require('./Wrap.js');
 
-
+/**
+ * Wraps an HTMLElement with a jquery like function
+ * @param  {string} input
+ * @return {SimpleDOM} Wrapped HTMLElement
+ */
 var $ = function(input){
   if( typeof input === 'undefined' ) {
     //log('input needed');
@@ -40,4 +55,8 @@ var $ = function(input){
   }
 };
 
+/**
+ * Constructor for SimpleDOM function.
+ * @exports $
+ */
 module.exports = $;

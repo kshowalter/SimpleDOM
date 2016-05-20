@@ -1,3 +1,8 @@
+
+
+/**
+ * Prototype object for the element wrapper.
+ */
 var wrapperPrototype = {
   text: function(string){
     this.elem.textContent = string;
@@ -7,7 +12,7 @@ var wrapperPrototype = {
     if( subElement instanceof String){
       subElement = document.createTextNode(subElement);
     }
-    
+
     if( subElement instanceof Node ){
       this.elem.appendChild(subElement);
     } else {
@@ -45,10 +50,20 @@ var wrapperPrototype = {
   }
 };
 
+
+/**
+ * @constructor Wraps an HTMLElement with a jquery like function.
+ * @param  {HTMLElement} element
+ * @return {function} HTMLElement wrapped by SimpleDOM
+ */
 var Wrap = function(element){
   var W = Object.create(wrapperPrototype);
   W.elem = element;
   return W;
 };
 
+
+/**
+ * @exports Wrap
+ */
 module.exports = Wrap;
