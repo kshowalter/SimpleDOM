@@ -5,9 +5,6 @@
  * @version 0.1.0
  */
 
-//var Value = require('./kDOMExtra.js').Value;
-//var Selector = require('./kDOMExtra.js').Selector;
-
 
 /**
  * @module
@@ -32,26 +29,8 @@ var $ = function(input){
     element = document.getElementByClassName(input.substr(1)[0]);
     return Wrap(element);
   } else {
-    if( input === 'value' ) {
-      if( Value !== undefined ) {
-        element = Value();
-        return element;
-      } else {
-        console.log('Error: Value not defined');
-        return false;
-      }
-    } else if( input === 'selector' ) {
-      if( Selector !== undefined ) {
-        element = Selector();
-        return element;
-      } else {
-        console.log('Error: Selector not defined');
-        return false;
-      }
-    } else {
-      element = document.createElement(input);
-      return Wrap(element);
-    }
+    element = document.createElement(input);
+    return Wrap(element);
   }
 };
 
