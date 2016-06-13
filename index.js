@@ -29,11 +29,7 @@ var $ = function(input, config){
     element = document.getElementByClassName(input.substr(1)[0]);
     return Wrap(element);
   } else {
-    if( config && config.namespace && config.namespace.toLocaleLowerCase() === 'svg'){
-      element = document.createElementNS('http://www.w3.org/2000/svg', input);
-      element.setAttribute('xmlns','http://www.w3.org/2000/svg');
-      element.setAttribute('xmlns:xlink','http://www.w3.org/1999/xlink');
-    } else if( config && config.namespaceURI ) {
+    if( config && config.namespaceURI ) {
       element = document.createElementNS(config.namespaceURI, input);
     } else {
       element = document.createElement(input);
