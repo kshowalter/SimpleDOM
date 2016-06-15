@@ -35,9 +35,12 @@ var wrapperPrototype = {
     } else {
       attributeName = name;
     }
-    //this.elem[attributeName] = value;
+    if( typeof value === 'function' ){
+      this.elem[attributeName] = value;
+    } else {
+      this.elem.setAttribute(attributeName, value);
+    }
     //console.log(attributeName, value);
-    this.elem.setAttribute(attributeName, value);
     return this;
   },
   unwrap: function(){
