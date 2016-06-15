@@ -35,7 +35,9 @@ var wrapperPrototype = {
     } else {
       attributeName = name;
     }
-    this.elem[attributeName] = value;
+    //this.elem[attributeName] = value;
+    //console.log(attributeName, value);
+    this.elem.setAttribute(attributeName, value);
     return this;
   },
   unwrap: function(){
