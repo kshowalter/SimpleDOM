@@ -16,7 +16,7 @@ var Wrap = require('./Wrap.js');
  * @param  {string} input
  * @return {SimpleDOM} Wrapped HTMLElement
  */
-var $ = function(input, config){
+var $ = function(input, specs){
   if( typeof input === 'undefined' ) {
     //log('input needed');
     return false;
@@ -29,8 +29,8 @@ var $ = function(input, config){
     element = document.getElementByClassName(input.substr(1)[0]);
     return Wrap(element);
   } else {
-    if( config && config.namespaceURI ) {
-      element = document.createElementNS(config.namespaceURI, input);
+    if( specs && specs.namespaceURI ) {
+      element = document.createElementNS(specs.namespaceURI, input);
     } else {
       element = document.createElement(input);
     }
