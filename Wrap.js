@@ -31,7 +31,7 @@ var wrapperPrototype = {
   attr: function(name, value ){
     var attributeName;
     if( name === 'class'){
-      attributeName = 'className';
+      attributeName = 'class';
     } else {
       attributeName = name;
     }
