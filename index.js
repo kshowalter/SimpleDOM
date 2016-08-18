@@ -31,6 +31,8 @@ var $ = function(input, specs){
   } else {
     if( specs && specs.namespaceURI ) {
       element = document.createElementNS(specs.namespaceURI, input);
+    } else if( specs && specs.textNode ) {
+      element = document.createTextNode(specs.text);
     } else {
       element = document.createElement(input);
     }
