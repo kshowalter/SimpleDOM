@@ -22,7 +22,9 @@ var $ = function(input, specs){
     return false;
   }
   var element;
-  if( input.substr(0,1) === '#' ) {
+  if( input.nodeName !== undefined ) {
+    element = input;
+  } else if( input.substr(0,1) === '#' ) {
     element = document.getElementById(input.substr(1));
     return Wrap(element);
   } else if( input.substr(0,1) === '.' ) {
