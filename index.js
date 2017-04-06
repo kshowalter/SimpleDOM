@@ -26,10 +26,8 @@ var $ = function(input, specs){
     element = input;
   } else if( input.substr(0,1) === '#' ) {
     element = document.getElementById(input.substr(1));
-    return Wrap(element);
   } else if( input.substr(0,1) === '.' ) {
     element = document.getElementByClassName(input.substr(1)[0]);
-    return Wrap(element);
   } else {
     if( specs && specs.namespaceURI ) {
       element = document.createElementNS(specs.namespaceURI, input);
@@ -38,8 +36,8 @@ var $ = function(input, specs){
     } else {
       element = document.createElement(input);
     }
-    return Wrap(element);
   }
+  return Wrap(element);
 };
 
 /**
