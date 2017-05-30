@@ -28,6 +28,8 @@ var $ = function(input, specs){
     element = document.getElementById(input.substr(1));
   } else if( input.substr(0,1) === '.' ) {
     element = document.getElementByClassName(input.substr(1)[0]);
+  } else if( input.constructor.prototype === HTMLElement || input instanceof SVGElement ) {
+    element = input;
   } else {
     if( specs && specs.namespaceURI ) {
       element = document.createElementNS(specs.namespaceURI, input);
