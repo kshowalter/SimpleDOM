@@ -21,12 +21,21 @@ var $ = function(input, specs){
     //log('input needed');
     return false;
   }
+  if( specs && specs.tag === 'textNode'){
+    specs.textNode = true;
+  }
+
+  if( input.constructor === Object && input.tag ){
+    specs = input;
+    input = specs.tag;
+  }
+
   var element;
   if( input.nodeName !== undefined ) {
     element = input;
-  } else if( input.substr(0,1) === '#' ) {
+  } else if( input.substr && input.substr(0,1) === '#' ) {
     element = document.getElementById(input.substr(1));
-  } else if( input.substr(0,1) === '.' ) {
+  } else if( input.substr && input.substr(0,1) === '.' ) {
     element = document.getElementByClassName(input.substr(1)[0]);
   } else if( input.constructor.prototype === HTMLElement || input instanceof SVGElement ) {
     element = input;
@@ -39,7 +48,18 @@ var $ = function(input, specs){
       element = document.createElement(input);
     }
   }
-  return Wrap(element);
+  var sdom = Wrap(element);
+  if( specs ){
+    if( specs.props ){
+      for( var name in specs.props ){
+        sdom.attr(name, specs.props[name]);
+      }
+    }
+    if( specs.text ){
+      sdom.text( specs.text );
+    }
+  }
+  return sdom;
 };
 
 /**
