@@ -21,6 +21,11 @@ var $ = function(input, specs){
     //log('input needed');
     return false;
   }
+
+  if( input.constructor === Object && input.elem ){
+    return input;
+  }
+
   if( specs && specs.tag === 'textNode'){
     specs.textNode = true;
   }
