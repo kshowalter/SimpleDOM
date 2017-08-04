@@ -21,14 +21,8 @@ var $ = function(input, specs){
     //log('input needed');
     return false;
   }
-<<<<<<< HEAD
 
   if( input.constructor === Object && input.elem ){
-=======
-  
-  if( input.constructor === Object && input.elem ){
-    console.log('ALL DONE');
->>>>>>> d37cdd0e6bee968ffe40f0aa6d8385aec790b191
     return input;
   }
 
