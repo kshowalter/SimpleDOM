@@ -42,6 +42,13 @@ var wrapperPrototype = {
     //console.log(attributeName, value);
     return this;
   },
+  css: function(name, value){
+    if( value === undefined ){
+      return this.elem.style[name];
+    }
+    this.elem.style[name] = value;
+    return this;
+  },
   unwrap: function(){
     return this.elem;
   },
