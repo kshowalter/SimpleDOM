@@ -41,7 +41,7 @@ var $ = function(input, specs){
   } else if( input.substr && input.substr(0,1) === '#' ) {
     element = document.getElementById(input.substr(1));
   } else if( input.substr && input.substr(0,1) === '.' ) {
-    element = document.getElementByClassName(input.substr(1))[0];
+    element = document.getElementsByClassName(input.substr(1))[0];
   } else if( input.constructor.prototype === HTMLElement || input instanceof SVGElement ) {
     element = input;
   } else {
