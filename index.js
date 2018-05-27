@@ -2,7 +2,7 @@
 * A simple DOM manipulation tool.
  * @fileOverview Constructor for SimpleDOM function.
  * @author Keith Showalter {@link https://github.com/kshowalter}
- * @version 0.1.0
+ * @version 0.2.0
  */
 
 
@@ -53,18 +53,22 @@ var $ = function(input, specs){
       element = document.createElement(input);
     }
   }
-  var sdom = Wrap(element);
-  if( specs ){
-    if( specs.props ){
-      for( var name in specs.props ){
-        sdom.attr(name, specs.props[name]);
+  if( element ){
+    var sdom = Wrap(element);
+    if( specs ){
+      if( specs.props ){
+        for( var name in specs.props ){
+          sdom.attr(name, specs.props[name]);
+        }
+      }
+      if( specs.text ){
+        sdom.text( specs.text );
       }
     }
-    if( specs.text ){
-      sdom.text( specs.text );
-    }
+    return sdom;
+  } else {
+    return false;
   }
-  return sdom;
 };
 
 /**
