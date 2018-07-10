@@ -1,12 +1,14 @@
 {
   "name": "simpledom",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A very simple DOM manipulation tool.",
   "main": "index.js",
   "author": "Ketih Showalter",
   "license": "BSD-2-Clause",
-  "keywords": ["DOM"],
-  "repository" : {
+  "keywords": [
+    "DOM"
+  ],
+  "repository": {
     "type": "git",
     "url": "git@github.com:kshowalter/SimpleDOM.git"
   }
