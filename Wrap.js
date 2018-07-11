@@ -37,7 +37,6 @@ var wrapperPrototype = {
     if( typeof value === 'function' ){
       this.elem[attributeName] = value;
     } else if( attributeName === 'innerHTML' ){
-      console.log('innerHTML');
       this.elem[attributeName] = value;
     } else {
       this.elem.setAttribute(attributeName, value);
